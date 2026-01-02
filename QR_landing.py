@@ -13,16 +13,22 @@ REPO_NAME = "qr_address"
 # 1. 페이지 설정
 st.set_page_config(page_title="대성쎌틱 명함 제작소", page_icon="🔥", layout="centered")
 
-# 2. 스타일 설정 (상단 메뉴 숨기기 코드 추가됨)
+# 2. 스타일 설정 (모든 메뉴/푸터/버튼 숨기기 적용)
 st.markdown("""
     <style>
     /* 전체 배경 흰색 */
     .stApp {background-color: #ffffff;}
     
-    /* [핵심] 상단 헤더(Github 아이콘, 메뉴 등) 숨기기 */
+    /* [핵심] 상단 헤더, 햄버거 메뉴 숨기기 */
     header {visibility: hidden;}
     #MainMenu {visibility: hidden;}
+    
+    /* [핵심] 하단 푸터(Made with Streamlit), Manage app 버튼 숨기기 */
     footer {visibility: hidden;}
+    .stDeployButton {display:none;}
+    [data-testid="stToolbar"] {visibility: hidden !important;}
+    [data-testid="stDecoration"] {visibility: hidden !important;}
+    [data-testid="stStatusWidget"] {visibility: hidden !important;}
     
     /* 메인 타이틀 스타일 */
     .main-header {
@@ -31,7 +37,7 @@ st.markdown("""
         color: #111; 
         text-align: center; 
         margin-bottom: 10px; 
-        padding-top: 0px; /* 헤더가 사라진 만큼 여백 조정 */
+        padding-top: 0px; 
     }
     
     /* 서브 텍스트 */
@@ -42,6 +48,14 @@ st.markdown("""
         margin-bottom: 30px;
     }
     
+    /* 입력창 디자인 개선 */
+    div[data-testid="stForm"] {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
     /* 버튼 스타일 */
     div.stButton > button {
         width: 100%; 
@@ -59,13 +73,13 @@ st.markdown("""
     
     /* 안내 박스 스타일 */
     .info-box {
-        background-color: #f8f9fa; 
-        border: 1px solid #ddd;
-        color: #555; 
+        background-color: #f1f3f5; 
+        border-left: 5px solid #222;
+        color: #333; 
         padding: 15px; 
-        border-radius: 5px; 
+        border-radius: 4px; 
         margin-top: 20px; 
-        font-size: 13px;
+        font-size: 14px;
         line-height: 1.6;
     }
     </style>
