@@ -173,7 +173,7 @@ p {{font-size: 17px; color: #555; margin-bottom: 40px; line-height: 1.6;}}
             st.markdown("""
             <div class="info-box">
             <b>잠시만 기다려주세요!</b><br>
-            새로 만든 주소는 전 세계에 배포되는 데 <b>약 1~2분</b> 정도 소요됩니다.<br>
+            새로 만든 주소는 작동하는 데 <b>약 1~2분</b> 정도 소요됩니다.<br>
             그동안 옆의 <b>QR코드 이미지</b>를 다운로드하세요.
             </div>
             """, unsafe_allow_html=True)
@@ -201,3 +201,4 @@ p {{font-size: 17px; color: #555; margin-bottom: 40px; line-height: 1.6;}}
 
     except Exception as e:
         st.error(f"❌ 오류 발생! 에러 내용: {e}")
+
